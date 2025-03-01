@@ -74,20 +74,20 @@ services:
 #        - ENABLE_RUST=--enable-rust
 
 # Suricata current (latest) from source
-  agent-suricata-current:
-    build:
-      context: ./dalton-agent
-      dockerfile: Dockerfiles/Dockerfile_suricata
-      args:
-        - SURI_VERSION=current
-        - http_proxy=${http_proxy}
-        - https_proxy=${https_proxy}
-        - no_proxy=${no_proxy}
-    image: suricata-current:latest
-    container_name: suricata-current
-    environment:
-      - AGENT_DEBUG=${AGENT_DEBUG}
-    restart: always
+#  agent-suricata-current:
+#    build:
+#      context: ./dalton-agent
+#      dockerfile: Dockerfiles/Dockerfile_suricata
+#      args:
+#        - SURI_VERSION=current
+#        - http_proxy=${http_proxy}
+#        - https_proxy=${https_proxy}
+#        - no_proxy=${no_proxy}
+#    image: suricata-current:latest
+#    container_name: suricata-current
+#    environment:
+#      - AGENT_DEBUG=${AGENT_DEBUG}
+#    restart: always
 
 # Suricata 6.0.20 from source, with Rust support
   agent-suricata-6.0.20:
@@ -265,21 +265,21 @@ services:
 #
 
 # Snort 2.9.20 from source
-  agent-snort-2.9.20:
-    build:
-      context: ./dalton-agent
-      dockerfile: Dockerfiles/Dockerfile_snort
-      args:
-        - SNORT_VERSION=2.9.20
-        - DAQ_VERSION=2.0.7
-        - http_proxy=${http_proxy}
-        - https_proxy=${https_proxy}
-        - no_proxy=${no_proxy}
-    image: snort-2.9.20:latest
-    container_name: snort-2.9.20
-    environment:
-      - AGENT_DEBUG=${AGENT_DEBUG}
-    restart: always
+#  agent-snort-2.9.20:
+#    build:
+#      context: ./dalton-agent
+#      dockerfile: Dockerfiles/Dockerfile_snort
+#      args:
+#        - SNORT_VERSION=2.9.20
+#        - DAQ_VERSION=2.0.7
+#        - http_proxy=${http_proxy}
+#        - https_proxy=${https_proxy}
+#        - no_proxy=${no_proxy}
+#    image: snort-2.9.20:latest
+#    container_name: snort-2.9.20
+#    environment:
+#      - AGENT_DEBUG=${AGENT_DEBUG}
+#    restart: always
 
 # Snort 2.9.18 from source
 #  agent-snort-2.9.18.1:
@@ -424,29 +424,29 @@ services:
 ###########################
 
 # Zeek current (latest) from source
-  agent-zeek-current:
-    build:
-      context: ./dalton-agent
-      dockerfile: Dockerfiles/Dockerfile_zeek
-      args:
-        - ZEEK_VERSION=7.0.1
-    image: zeek-current:latest
-    container_name: zeek-current
-    volumes:
-      - ./rulesets/zeek:/opt/dalton-agent/zeek_scripts:ro
-    restart: always
+#  agent-zeek-current:
+#    build:
+#      context: ./dalton-agent
+#      dockerfile: Dockerfiles/Dockerfile_zeek
+#      args:
+#        - ZEEK_VERSION=7.0.1
+#    image: zeek-current:latest
+#    container_name: zeek-current
+#    volumes:
+#      - ./rulesets/zeek:/opt/dalton-agent/zeek_scripts:ro
+#    restart: always
 
-  agent-zeek-6.0.6:
-    build:
-      context: ./dalton-agent
-      dockerfile: Dockerfiles/Dockerfile_zeek
-      args:
-        - ZEEK_VERSION=6.0.6
-    image: zeek-6.0.6
-    container_name: zeek-6.0.6
-    volumes:
-      - ./rulesets/zeek:/opt/dalton-agent/zeek_scripts:ro
-    restart: always
+#  agent-zeek-6.0.6:
+#    build:
+#      context: ./dalton-agent
+#      dockerfile: Dockerfiles/Dockerfile_zeek
+#      args:
+#        - ZEEK_VERSION=6.0.6
+#    image: zeek-6.0.6
+#    container_name: zeek-6.0.6
+#    volumes:
+#      - ./rulesets/zeek:/opt/dalton-agent/zeek_scripts:ro
+#    restart: always
 
 ###########################
 ## Cyberchef Integration ##
